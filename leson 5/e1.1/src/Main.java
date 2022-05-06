@@ -6,9 +6,9 @@ public class Main {
                 int a= scanner.nextInt();
                 int b= scanner.nextInt();
                 int h= scanner.nextInt();
-                if(a<b &&a==h)
+                if(a<b && a>h)
                     System.out.println("Deficienxy");
-        if(a<b &&b==h)
+      else  if(b>a && b<h)
             System.out.println("exces");
         else
             System.out.println("Normal");
