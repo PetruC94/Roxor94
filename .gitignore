@@ -1,0 +1,8 @@
+build/
+dist/
+*.log
+dist/ 
+src/
+main/
+resources/
+*.bak
