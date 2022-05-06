@@ -1,8 +1,4 @@
-build/
-dist/
+idea/
 *.log
-dist/ 
-src/
-main/
-resources/
+ resources/
 *.bak
