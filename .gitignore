@@ -1,8 +1,7 @@
+*.idea/
 build/
 dist/
 *.log
-dist/ 
-src/
-main/
-resources/
+out/ 
 *.bak
+*.iml
