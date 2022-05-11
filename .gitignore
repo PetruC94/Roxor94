@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.idea/
 build/
 dist/
@@ -5,3 +6,11 @@ dist/
 out/ 
 *.bak
 *.iml
+=======
+idea/
+*.log
+ resources/
+*.bak
+out/
+*.iml
+>>>>>>> e18a35bf57f5628f88ba233a1c840da19b3e1168
