@@ -6,8 +6,8 @@ public class Main {
         int a= sc.nextInt();
         String b= String.valueOf(a);
         int length = b.length();
-        while (a == 0) {
-            System.out.println(length);
+        while (a != 0 ) {
+            System.out.print(length+a);
 
 
 
