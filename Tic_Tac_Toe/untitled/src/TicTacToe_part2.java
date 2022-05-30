@@ -1,40 +1,40 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
+//Tict tac Toe
 public class TicTacToe_part2 {
     static ArrayList<Integer>Playerpositions=new ArrayList<>();
     static ArrayList<Integer>cpuPositions=new ArrayList<>();
     public static void main(String[] args) {
-
+// Chenarul jocullui
         char[][] gameBoard = {{'-', '-', '-', '-', '-', '-', '-', '-', '-', '-',},
                 {'|', ' ', '1',' ', '2',' ', '3', ' ', ' ', '|'},
                 {'|', ' ', '4', ' ', '5', ' ', '6', ' ',' ','|'},
                 {'|', ' ', '7', ' ', '8', ' ', '9', ' ',' ','|'},
                 {'-', '-', '-', '-', '-', '-', '-', '-', '-', '-',}};
+
         Scanner sc=new Scanner( System.in );
+        // while
         while (true) {
             System.out.println( "Scrie o cifra de la 1-9: " );
-            int Playerpos = sc.nextInt();
-            while (Playerpositions.contains( Playerpos ) || cpuPositions.contains( cpuPositions )) {
-            System.out.println( "Imposible! Enter a corect Position" );
-            Playerpos = sc.nextInt();
-        }
-            PlacePiece( gameBoard,Playerpos,"player" );
-            String result= ChecWinner();
+                int Playerpos = sc.nextInt();
+                    while (!(!Playerpositions.contains( Playerpos ) || !cpuPositions.contains( cpuPositions ))) {
+                        System.out.println( "Imposible! Enter a corect Position" );
+                        Playerpos = sc.nextInt();
+                    }
+                    PlacePiece( gameBoard,Playerpos,"player" );
+                    String result= ChecWinner();
             if (result.length()>0){
                 System.out.println(result);
                 break;
             }
 
                 Random random=new Random();
-            int cpupos=random.nextInt(9)+1;
-            while (Playerpositions.contains( cpupos ) || cpuPositions.contains( cpupos )) {
+                     int cpupos=random.nextInt(9)+1;
+                while (Playerpositions.contains( cpupos ) || cpuPositions.contains( cpupos )) {
 
-                cpupos=random.nextInt(9)+1;
-            }
+                    cpupos=random.nextInt(9)+1;
+
+                }
             PlacePiece( gameBoard,cpupos,"cpu" );
             PrintgameBoard( gameBoard );
             result= ChecWinner();
@@ -64,36 +64,18 @@ public class TicTacToe_part2 {
             cpuPositions.add( pos );
         }
 
-        switch (pos){
-
-                case 1:
-                    gameBoard[1][2]=symbol;
-                    break;
-                case 2:
-                    gameBoard[1][4]=symbol;
-                    break;
-                case 3:
-                    gameBoard[1][6]=symbol;
-                    break;
-                case 4:
-                    gameBoard[2][2]=symbol;
-                    break;
-                case 5:
-                    gameBoard[2][4]=symbol;
-                    break;
-                case 6:
-                    gameBoard[2][6]=symbol;
-                    break;case 7:
-                    gameBoard[3][2]=symbol;
-                    break;
-                case 8:
-                    gameBoard[3][4]=symbol;
-                    break;
-                case 9:
-                    gameBoard[3][6]=symbol;
-                    break;
-                default:
-                    break;
+        switch (pos) {
+            case 1 -> gameBoard[1][2] = symbol;
+            case 2 -> gameBoard[1][4] = symbol;
+            case 3 -> gameBoard[1][6] = symbol;
+            case 4 -> gameBoard[2][2] = symbol;
+            case 5 -> gameBoard[2][4] = symbol;
+            case 6 -> gameBoard[2][6] = symbol;
+            case 7 -> gameBoard[3][2] = symbol;
+            case 8 -> gameBoard[3][4] = symbol;
+            case 9 -> gameBoard[3][6] = symbol;
+            default -> {
+            }
         }
 
     }
@@ -116,12 +98,12 @@ public class TicTacToe_part2 {
             Winning.add( cross1);
             Winning.add( cross2 );
             for (List l:Winning){
-            if (Playerpositions.containsAll( l  ) ){
-                return "Uraaa Ai cistigat";
+            if (Playerpositions.containsAll(l ) ){
+                return "Player Wins!\uD83E\uDD19";
             } else if (cpuPositions.containsAll( l )) {
-                return "Cpu wins:(";
+                return "Bot Wins!\uD83E\uDD16";
              }else if(Playerpositions.size()+cpuPositions.size()==9){
-                return "Draw";
+                return "Draw!\uD83D\uDC4A";
                 }
             }
         return "";
