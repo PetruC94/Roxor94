@@ -10,8 +10,4 @@ public class Square extends Shape {
     public double area() {
         return side*side;
     }
-    @Override
-    public String toString(){
-        return "Square{side"+side+"}";
-    }
 }

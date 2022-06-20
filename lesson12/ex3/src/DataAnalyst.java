@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class DataAnalyst extends Employee {
     private boolean phd;
     private String[] methods;
@@ -8,11 +10,20 @@ public class DataAnalyst extends Employee {
         this.methods = methods;
     }
 
+
     public boolean isPhd() {
         return phd;
     }
 
     public String[] getMethods() {
         return methods;
+    }
+
+    @Override
+    public String toString() {
+        return "DataAnalyst{" +
+                "phd=" + phd +
+                ", methods=" + Arrays.toString( methods ) +
+                '}';
     }
 }

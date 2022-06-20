@@ -9,9 +9,19 @@ public class Employee {
         this.experience = experience;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", experience=" + experience +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
+
 
     public String getEmail() {
         return email;

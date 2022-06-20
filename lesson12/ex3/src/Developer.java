@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Developer extends Employee{
    private String mainLanguage;
     private String[] skills;
@@ -14,5 +16,13 @@ public class Developer extends Employee{
 
     public String[] getSkills() {
         return skills;
+    }
+
+    @Override
+    public String toString() {
+        return "Developer{" +
+                "mainLanguage='" + mainLanguage + '\'' +
+                ", skills=" + Arrays.toString( skills ) +
+                '}';
     }
 }
